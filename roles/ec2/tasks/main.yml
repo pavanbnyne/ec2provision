@@ -1,0 +1,11 @@
+---
+
+- name: Provision EC2 instance
+  ec2:
+   key_name: {{ key_name }}
+   instance_type: t2.micro
+   vpc_subnet_id: subnet-3e33394a
+   image: {{ image }}
+   assign_public_ip: yes
+   region: us-west-2
+  register: ec2_created
